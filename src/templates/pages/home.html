@@ -128,7 +128,7 @@ function loadTweets(tweetsEl) {
     xhr.onload = function() {
         
         const serverResponse = xhr.response
-        var listedItems = serverResponse.response
+        var listedItems = serverResponse
         var finalTweetStr = ""
         var i;
         for (i=0; i<listedItems.length; i++){

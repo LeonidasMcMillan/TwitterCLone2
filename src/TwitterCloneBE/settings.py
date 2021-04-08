@@ -31,18 +31,21 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 LOGIN_URL = "/login"
 
-
+MAX_TWEET_LENGTH = 140
 # Application definition
 
 INSTALLED_APPS = [
+    # Built-in
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+    # Internal
     'tweetFun',
+    # 3rd-Party
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
