@@ -1,0 +1,8 @@
+__________________________________________________________
+Guidelines
+__________________________________________________________
+
+After updating models.py, always run makemigrations then migrate to finalize changes!
+
+After creating a view, it will always need to be routed through urls
+
