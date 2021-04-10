@@ -14,14 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
-from tweetFun.views import tweetCreateView, homePage, tweetDetailView, tweet_list_view
+from tweetFun.views import (
+    tweetCreateView, 
+    homePage, 
+    tweetDetailView, 
+    tweetListView, 
+    tweetDeleteView,
+    tweetActionView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homePage),
     path('tweets/<int:tweet_id>', tweetDetailView),
-    path('tweets/', tweet_list_view),
-    path('create-tweet/', tweetCreateView)
+    path('tweets/', tweetListView),
+    path('create-tweet/', tweetCreateView),
+    path('api/tweets/', include('tweetFun.urls')),
+ 
+    #path('api/tweets/<int:tweet_id>/delete', tweetDeleteView),
+    #path('api/tweets/action', tweetActionView), 
+    
+    
+    
 ]
